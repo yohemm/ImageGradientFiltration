@@ -11,9 +11,10 @@ import time
 class TimeChecker(CheckerReverseRes):
     
     def checkLogical(self, filter:Filter)-> any:
+        stri = os.path.join(os.getcwd(), 'src', 'source_image', 'barnard_stacked_gradient.png')
         start = TimeChecker.current_milli_time()
         # A tester (cause de problem)
-        stri = os.path.join(os.getcwd(), 'src', 'source_image', 'barnard_stacked_gradient.png')
+
         filter.use(cv2.imread(stri), "poubel.png")
         end = TimeChecker.current_milli_time()
         return end - start

@@ -1,0 +1,6 @@
+1 :
+gorsse moyenne - filtre de detection de tache lumineuse
+
+2 :
+gorsse moyenne
+detection des point blanc et les passer en noir

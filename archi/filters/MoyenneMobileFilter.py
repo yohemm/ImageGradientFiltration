@@ -2,22 +2,22 @@ if __name__ == "__main__":
     import sys
     sys.path.append('C:\\Users\\Yourem\\Desktop\\Dev\\Python\\image_filtration')
 
-from archi.filters.Filter import Filter
+from archi.filters.FilterWithPower import FilterWithPower
 from archi.filters.Filter import Mat
 import numpy as np
 import cv2
 
 
-class MoyenneMobileFilter(Filter):
+class MoyenneMobileFilter(FilterWithPower):
+    
     def logical(self, image:Mat)-> Mat:
-        fenetre_taille = 15
         image = cv2.convertScaleAbs(image)
-
+        print(self.power)
         # Appliquer la moyenne mobile à l'image
-        image_lissee = cv2.boxFilter(image, -1, (fenetre_taille, fenetre_taille))
+        image_lissee = cv2.boxFilter(image, -1, (self.power, self.power))
 
         # Soustraire l'image lissée de l'image originale pour obtenir le gradient
-        gradient = image - image_lissee
+        gradient = image_lissee
         
 
         
@@ -30,8 +30,10 @@ class MoyenneMobileFilter(Filter):
 
 if __name__ == "__main__":
     from archi.checkers.TimeChecker import TimeChecker
+    # from archi.checkers.AllPowerCheker import AllPowerCheker
     timeCheck = TimeChecker()
-    
-    timeCheck.check(MoyenneMobileFilter()) # A Remplacer
+    filter = MoyenneMobileFilter()
+    filter.power = 100
+    timeCheck.check(filter) # A Remplacer
     
     timeCheck.result()

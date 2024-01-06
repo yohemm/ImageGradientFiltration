@@ -12,7 +12,10 @@ class Filter(abc.ABC,metaclass=abc.ABCMeta):
         raise NotImplementedError('I need to be implemented!')
     
     def use(self, image:Mat, filterFuturPath:str)-> Mat:
-        cv2.imwrite("src/retourn_image/"+filterFuturPath, self.logical(image))
+        img = self.logical(image)
+        if img is None:
+            return None
+        cv2.imwrite("src/retourn_image/"+str(filterFuturPath), self.logical(image))
 
     
     
