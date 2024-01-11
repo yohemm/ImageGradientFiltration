@@ -1,7 +1,6 @@
-```py
 if __name__ == "__main__":
     import sys
-    sys.path.append(r'C:\Users\mathe\OneDrive\Documents\IUT\S3\SAE_S3_C2\ImageGradientFiltration-master')
+    sys.path.append('C:\\Users\\Yourem\\Desktop\\Dev\\Python\\image_filtration')
 
 from archi.filters.Filter import Filter
 from archi.filters.Filter import Mat
@@ -66,4 +65,3 @@ if __name__ == "__main__":
     timeCheck.check(KalmanFilter()) # Remplacer par le filtre de Kalman
     
     timeCheck.result()
-```

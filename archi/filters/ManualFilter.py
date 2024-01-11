@@ -42,7 +42,6 @@ class ManualFilter(Filter):
 
         gradient_image = np.zeros((hauteur, largeur, 3), dtype=np.uint8)
         gradient_image = cv2.convertScaleAbs(gradient_image)
-        print(gradient_moyen_r, gradient_moyen_g, gradient_moyen_b)
 
         # Parcourir l'image et remplir les pixels en fonction des pentes moyennes
         for i in range(hauteur):

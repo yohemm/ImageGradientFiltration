@@ -12,7 +12,6 @@ class MoyenneMobileFilter(FilterWithPower):
     
     def logical(self, image:Mat)-> Mat:
         image = cv2.convertScaleAbs(image)
-        print(self.power)
         # Appliquer la moyenne mobile à l'image
         image_lissee = cv2.boxFilter(image, -1, (self.power, self.power))
 
@@ -33,7 +32,7 @@ if __name__ == "__main__":
     # from archi.checkers.AllPowerCheker import AllPowerCheker
     timeCheck = TimeChecker()
     filter = MoyenneMobileFilter()
-    filter.power = 100
+    filter.power = 10
     timeCheck.check(filter) # A Remplacer
     
     timeCheck.result()

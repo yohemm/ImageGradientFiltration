@@ -13,11 +13,10 @@ class AllPowerCheker(Checker):
     def checkLogical(self, filter:Filter)-> any:
         if issubclass(type(filter), FilterWithPower):
             stri = os.path.join(os.getcwd(), 'src', 'source_image', 'barnard_stacked_gradient.png')
+            print("range : 1, 30")
             for i in range(1,30):
                 filter.setPower(i)
-                print("1")
                 filter.use(cv2.imread(stri), "/poubel"+str(i)+".png")
-                print("3")
         
     
     

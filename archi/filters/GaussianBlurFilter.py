@@ -18,8 +18,6 @@ class GaussianBlurFilter(FilterWithPower):
             image_gris = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
             # Appliquer un filtre de lissage (par exemple, un filtre de flou gaussien)
-            print("tzst")
-            print(self.power)
             filtre_lissage = cv2.GaussianBlur(image_gris, (self.power, self.power), 0)
             
 

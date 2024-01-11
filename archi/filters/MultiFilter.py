@@ -27,8 +27,8 @@ class MultiFilter(FilterWithPower):
 
         # Augmenter la puissance des pixels blancs en multipliant par un facteur
         mobile[white_pixels] = np.clip(mobile[white_pixels], 150, 255).astype(np.uint8)
-        
-        return cv2.subtract(image, cv2.GaussianBlur(image - (cv2.cvtColor(SobelFilter().logical(imageBlur), cv2.COLOR_BGR2RGB)+ mobile), (7, 7), 0))
+        res = cv2.subtract(image, cv2.GaussianBlur(image - (cv2.cvtColor(SobelFilter().logical(imageBlur), cv2.COLOR_BGR2RGB)+ mobile), (7, 7), 0))
+        return res
 
 
 

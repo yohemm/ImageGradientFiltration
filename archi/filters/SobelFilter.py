@@ -23,6 +23,7 @@ class SobelFilter(Filter):
 
         # Convertir le gradient en valeurs d'entiers non signés 8 bits
         gradient_magnitude = cv2.convertScaleAbs(gradient_magnitude)
+        gradient_magnitude = cv2.cvtColor(gradient_magnitude, cv2.COLOR_GRAY2RGB)
         
         return gradient_magnitude
 
