@@ -5,7 +5,7 @@
 
 ## 🌟 Project Status
 
-> **Current Status**: **:red_circle: Discontinued**  
+> **Current Status**: **:white_circle: In Beta**  
 >
 > No longer maintained
 >
