@@ -3,6 +3,18 @@
 
 <!-- ![Project Banner](path/to/banner/image)  -->
 
+## 🌟 Project Status
+
+> **Current Status**: **:red_circle: Discontinued**  
+>
+> No longer maintained
+>
+> The System is Runnable
+>
+> Projet for study
+
+---
+
 ## Overview
 College project for image's polution filtration.
 
